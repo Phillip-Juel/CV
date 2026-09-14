@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phillip Juel Nielsen · CV</title>
+<meta name="description" content="Phillip Juel Nielsen — Cand.IT i IT-ledelse. Dataanalyse, Business Intelligence og procesoptimering.">
+<style>
+  :root{
+    --paper: #F6F4EF;
+    --paper-raised: #FFFFFF;
+    --ink: #1D2321;
+    --ink-soft: #565F5C;
+    --line: #DDD8CC;
+    --accent: #2B6E5E;
+    --accent-soft: #E4EEE9;
+    --accent-ink: #1E4B40;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3{
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  a{ color: var(--accent-ink); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .wrap{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Nav */
+  header.nav{
+    position: sticky;
+    top: 0;
+    background: rgba(246,244,239,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+  }
+  .nav-inner{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 16px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .nav-name{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+  .nav-links{
+    display: flex;
+    gap: 22px;
+    font-size: 0.92rem;
+  }
+  .nav-links a{ color: var(--ink-soft); }
+  .nav-links a:hover{ color: var(--accent-ink); }
+
+  /* Hero */
+  .hero{
+    padding: 64px 0 48px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  .hero img{
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--paper-raised);
+    box-shadow: 0 0 0 1px var(--line);
+    flex-shrink: 0;
+  }
+  .hero h1{
+    font-size: 2rem;
+    letter-spacing: -0.01em;
+  }
+  .hero .role{
+    margin-top: 6px;
+    font-size: 1.1rem;
+    color: var(--accent-ink);
+    font-weight: 500;
+  }
+  .hero .loc{
+    margin-top: 4px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .hero p.intro{
+    margin-top: 18px;
+    max-width: 58ch;
+    color: var(--ink);
+  }
+
+  /* Sections */
+  section{
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+  }
+  .eyebrow{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .eyebrow .num{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .eyebrow h2{
+    font-size: 1.3rem;
+  }
+
+  /* Skills pills */
+  .pills{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .pill{
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  /* Experience entries */
+  .entry{
+    margin-bottom: 32px;
+  }
+  .entry:last-child{ margin-bottom: 0; }
+  .entry-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .entry-title{
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .entry-org{
+    color: var(--accent-ink);
+    font-weight: 500;
+  }
+  .entry-period{
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .entry-desc{
+    margin-top: 8px;
+    color: var(--ink);
+    max-width: 62ch;
+  }
+  .entry-desc ul{
+    margin: 8px 0 0;
+    padding-left: 20px;
+  }
+  .entry-desc li{ margin-bottom: 4px; }
+  .tags{
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag{
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  /* Languages */
+  .langs{
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .lang{ min-width: 140px; }
+  .lang .name{ font-weight: 600; }
+  .lang .level{ color: var(--ink-soft); font-size: 0.9rem; }
+
+  /* Footer / contact */
+  footer{
+    padding: 56px 0 64px;
+    border-top: 1px solid var(--line);
+  }
+  footer h2{ font-size: 1.5rem; }
+  footer p{ color: var(--ink-soft); margin-top: 8px; max-width: 50ch; }
+  .contact-links{
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .contact-links a{
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+  .contact-links a.primary{
+    background: var(--accent);
+    color: #fff;
+  }
+  .contact-links a.primary:hover{
+    background: var(--accent-ink);
+    text-decoration: none;
+  }
+  .contact-links a.secondary{
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .contact-links a.secondary:hover{
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+  .copyright{
+    margin-top: 40px;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 560px){
+    .hero{ flex-direction: column; align-items: flex-start; }
+    .hero img{ width: 84px; height: 84px; }
+    .nav-links{ gap: 14px; font-size: 0.86rem; }
+    .entry-period{ white-space: normal; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <span class="nav-name">Phillip Juel Nielsen</span>
+    <nav class="nav-links">
+      <a href="#kompetencer">Kompetencer</a>
+      <a href="#erfaring">Erfaring</a>
+      <a href="#uddannelse">Uddannelse</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero" style="border-top:none;">
+    <img src="images/profile.jpg" alt="Phillip Juel Nielsen">
+    <div>
+      <h1>Phillip Juel Nielsen</h1>
+      <div class="role">Cand.IT i IT-ledelse</div>
+      <div class="loc">Aalborg, Danmark</div>
+      <p class="intro">
+        Nyuddannet cand.it. med stærke analytiske og tekniske kompetencer og blik for samspillet
+        mellem IT, processer og organisation. Erfaring med systemintegration, procesoptimering og
+        analyse af komplekse IT-miljøer fra projekter i både offentlige og private organisationer.
+        Arbejder struktureret med fejlfinding og behovsafdækning, og motiveres af at forstå årsagen
+        til en problemstilling frem for blot at håndtere symptomerne.
+      </p>
+    </div>
+  </section>
+
+  <section id="kompetencer">
+    <div class="eyebrow">
+      <h2>Kompetencer</h2>
+    </div>
+    <div class="pills">
+      <span class="pill">Dataanalyse &amp; Business Intelligence</span>
+      <span class="pill">Power BI, Power Query &amp; Excel</span>
+      <span class="pill">Projektledelse &amp; koordinering</span>
+      <span class="pill">Procesanalyse &amp; procesoptimering</span>
+      <span class="pill">Business Analysis &amp; behovsafdækning</span>
+      <span class="pill">Automatisering &amp; digitalisering</span>
+      <span class="pill">Stakeholder Management</span>
+      <span class="pill">SQL &amp; Python</span>
+    </div>
+  </section>
+
+  <section id="erfaring">
+    <div class="eyebrow">
+      <span class="num">01.</span>
+      <h2>Erhvervserfaring &amp; ledelse</h2>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <div class="entry-title">Formand, bestyrelsesmedlem og forskellige ledelsesroller</div>
+          <div class="entry-org">POLIS Idrætsklub</div>
+        </div>
+        <div class="entry-period">2022 – 2026 · Aalborg</div>
+      </div>
+      <div class="entry-desc">
+        <ul>
+          <li>Ledte strategiske initiativer for et studiefællesskab med over 100 medlemmer.</li>
+          <li>Planlagde og koordinerede arrangementer på tværs af studier og interessenter.</li>
+          <li>Varetog flere ledelsesroller, herunder teamkoordinator og klubrepræsentant i forhandlinger.</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag">Ledelse</span>
+        <span class="tag">Stakeholder Management</span>
+        <span class="tag">Eventkoordinering</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <div class="entry-title">Kundeservicemedarbejder</div>
+          <div class="entry-org">Rezponz A/S</div>
+        </div>
+        <div class="entry-period">2020 – 2022</div>
+      </div>
+      <div class="entry-desc">
+        <ul>
+          <li>Håndterede kundehenvendelser og leverede support på Telenor-opgaven med fokus på professionel kommunikation og problemløsning.</li>
+          <li>Opbyggede erfaring med kundehåndtering og koordinering af henvendelser i en teknologidrevet organisation.</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag">Kundeservice</span>
+        <span class="tag">Kommunikation</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <div class="entry-title">Lukkeansvarlig</div>
+          <div class="entry-org">Dagli'Brugsen Hornum</div>
+        </div>
+        <div class="entry-period">2018 – 2020</div>
+      </div>
+      <div class="entry-desc">
+        <ul>
+          <li>Ansvarlig for butikkens lukkeprocedurer og den daglige drift.</li>
+          <li>Oplæring og vejledning af nye medarbejdere.</li>
+        </ul>
+      </div>
+      <div class="tags">
+        <span class="tag">Drift</span>
+        <span class="tag">Oplæring</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="uddannelse">
+    <div class="eyebrow">
+      <span class="num">02.</span>
+      <h2>Uddannelse &amp; projekter — Aalborg Universitet</h2>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <div class="entry-title">Kandidatspeciale</div>
+          <div class="entry-org">Organisatorisk transformation i Arla IT</div>
+        </div>
+      </div>
+      <div class="entry-desc">
+        Undersøgte Arla IT's overgang til en ny organisations- og arbejdsmodel med fokus på
+        samspillet mellem teknologi, processer, governance og organisation. Analyserede komplekse
+        problemstillinger og stakeholderperspektiver gennem interviews og omsatte analysen til
+        konkrete anbefalinger for organisationens videre udvikling.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <div class="entry-title">8. semesters projekt</div>
+          <div class="entry-org">Procesoptimering af Aalborg Kommune</div>
+        </div>
+      </div>
+      <div class="entry-desc">
+        Analyserede processer, behov og systemlandskab bag et ønske om at opdatere kommunens
+        interne telefonkommunikation, og viste at den underliggende udfordring var knyttet til det
+        eksisterende systemlandskab. Arbejdede med procesoptimering, API-integration og
+        sammenkobling af data på tværs af systemer, fra problemidentifikation til konkret
+        løsningsforslag.
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <div>
+          <div class="entry-title">Bachelorprojekt</div>
+          <div class="entry-org">Business Intelligence &amp; Analytics</div>
+        </div>
+      </div>
+      <div class="entry-desc">
+        Undersøgte danske virksomheders anvendelse af Business Intelligence &amp; Analytics med
+        fokus på sammenhængen mellem BI&amp;A og virksomheders kommunikation og resultater.
+        Arbejdede med kvantitativ dataanalyse og statistiske metoder, og vurderede kritisk
+        forskellige mulige forklaringer på identificerede sammenhænge.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">
+      <span class="num">03.</span>
+      <h2>Sprog</h2>
+    </div>
+    <div class="langs">
+      <div class="lang">
+        <div class="name">Dansk</div>
+        <div class="level">Modersmål</div>
+      </div>
+      <div class="lang">
+        <div class="name">Engelsk</div>
+        <div class="level">Flydende</div>
+      </div>
+      <div class="lang">
+        <div class="name">Tysk</div>
+        <div class="level">Grundlæggende</div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="kontakt">
+    <h2>Lad os tale sammen</h2>
+    <p>Jeg hører gerne fra dig — send en mail eller ring, hvis du vil tage en snak om en mulig stilling.</p>
+    <div class="contact-links">
+      <a class="primary" href="mailto:pjuelnv@gmail.com">Skriv en mail</a>
+      <a class="secondary" href="tel:+4520289250">+45 20 28 92 50</a>
+    </div>
+    <div class="copyright">© 2026 Phillip Juel Nielsen</div>
+  </footer>
+
+</div>
+</body>
+</html>
